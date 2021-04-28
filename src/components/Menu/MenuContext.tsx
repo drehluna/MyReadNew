@@ -39,6 +39,7 @@ export default function MenuProvider ({children} : MenuProviderProps) {
 
 
     useEffect(() => {
+        setheader('Lendo atualmente')
         setCurrentList(lendoAtual)
     }, [lendoAtual])
 
