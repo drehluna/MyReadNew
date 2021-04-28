@@ -25,6 +25,7 @@ export function SearchPage() {
     const {lendoAtual, setLendoAtual} = useContext(bookContext)
     const {setCurrentList,setheader} = useContext(MenuContext)
     const [search2, setSearch2] = useState('')
+    const [headername, setheadername] = useState('')
 
     let trimString = function (string:string, length:number) {
         return string.length > length ? 
@@ -37,6 +38,7 @@ export function SearchPage() {
 
     async function getBooks(value: string) {
         const books = await search(value)
+        setheadername(search2)
         for (let i in books) {
             let id = books[i]['id']
             let name = books[i]['title'] ? books[i]['title'] : 'Conteúdo inexistente.'
@@ -55,6 +57,7 @@ export function SearchPage() {
 
     useEffect(() => {
         SetSearch([{id: '',CurrentShelf:'', NameBook: '', Thumbnail: '', Authors: [], Description: ''}].splice(1,1))
+        
         const timeOutId = setTimeout(() => getBooks(search2), 500);
         return () => clearTimeout(timeOutId);
     },
@@ -72,7 +75,7 @@ export function SearchPage() {
                 }}></span>
             </div>
             <section>
-                <Booklist header="" bookList={SearchBooks} />
+                <Booklist header={headername} bookList={SearchBooks} />
             </section>
         </div>
     );
