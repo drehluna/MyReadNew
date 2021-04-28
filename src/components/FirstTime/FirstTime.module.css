@@ -1,0 +1,25 @@
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100em;
+    
+    
+}
+
+.content h1 {
+    
+    padding-top: 10px;
+    margin-top: 5rem;
+    
+}
+
+.content div {
+    
+    padding: 20px 0;
+   
+    
+}
+

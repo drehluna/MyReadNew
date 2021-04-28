@@ -1,0 +1,77 @@
+.menubar {
+
+    border-radius: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #232427;
+    box-shadow: -2.5px 2px 35px  -6px black;
+    width: 50px;
+    height: 180px;
+    margin-bottom: -20rem;
+    margin-top: 10rem;
+    
+    
+}
+
+.menubar span:hover {
+    border-left: 2px solid #1ED45F;
+}
+
+.menubar span:nth-child(1) {
+
+    width: 50px;
+    height: 140px;
+    margin: 10px;
+    background-image: url('../../icons/open-book.svg');
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.menubar span:nth-child(2) {
+
+    width: 50px;
+    height: 140px;
+    margin: 10px;
+    background-image: url('../../icons/best-seller.svg');
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+
+.menubar span:nth-child(3) {
+    
+    width: 50px;
+    height: 140px;
+    margin: 10px;
+    background-image: url('../../icons/book.svg');
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.menubar span:nth-child(4) {
+    text-align: center;
+    width: 50px;
+    height: 140px;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: 50px;
+    color: #5D6060
+}
+
+
+
+.menubar span:hover{
+    cursor: pointer;
+    opacity: 0.7;
+    
+}
+

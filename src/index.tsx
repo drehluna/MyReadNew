@@ -1,17 +1,18 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import BookProvider from './components/BookList/bookcontext';
+import MenuProvider from './components/Menu/MenuContext';
+import SearchPageProvider from './components/SearchPage/SearchPageContext';
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BookProvider>
+    <SearchPageProvider>
+    <MenuProvider>
     <App />
-  </React.StrictMode>,
+    </MenuProvider>
+    </SearchPageProvider>
+  </BookProvider>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
