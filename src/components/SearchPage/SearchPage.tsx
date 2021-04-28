@@ -38,7 +38,7 @@ export function SearchPage() {
 
     async function getBooks(value: string) {
         const books = await search(value)
-        setheadername(search2)
+        setheadername('Resultados')
         for (let i in books) {
             let id = books[i]['id']
             let name = books[i]['title'] ? books[i]['title'] : 'Conteúdo inexistente.'
@@ -50,16 +50,18 @@ export function SearchPage() {
             
             SetSearch((SearchBooks: Array<BooklistProps>) => [...SearchBooks, { id: id ,CurrentShelf:'', NameBook: trimString(name,20), Thumbnail: thumb, Authors: author, Description: trimString(desc, 90) }])
            
-            console.log(SearchBooks)
+            
           }
 
     }
 
     useEffect(() => {
+        if(search2 != '') {
         SetSearch([{id: '',CurrentShelf:'', NameBook: '', Thumbnail: '', Authors: [], Description: ''}].splice(1,1))
         
         const timeOutId = setTimeout(() => getBooks(search2), 500);
         return () => clearTimeout(timeOutId);
+        }
     },
     [search2])
 
